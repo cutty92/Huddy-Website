@@ -4,11 +4,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Huddy Website</title>
-    <script type="module" crossorigin src="./assets/index-4a299289.js"></script>
-    <link rel="stylesheet" href="./assets/index-a3409e3f.css">
+    <script type="module" crossorigin src="./assets/index-6ffd0ac4.js"></script>
+    <link rel="stylesheet" href="./assets/index-585e1f9f.css">
   </head>
   <body>
     <div id="root"></div>
+    <!-- Inline debug/fallback: shows a visible message even if the module bundle fails to load -->
+    <script>
+      try {
+        (function () {
+          var root = document.getElementById('root');
+          if (!root) return;
+          // create a debug message element; it will be removed/replaced by React when app mounts
+          var msg = document.createElement('div');
+          msg.id = 'inline-debug-msg';
+          msg.style.cssText = 'font-family:system-ui,Segoe UI,Roboto,Arial;padding:1rem;background:#fffbeb;border:1px solid #f5c242;margin:1rem';
+          msg.innerText = 'HTML served — inline JS executed. If this message shows but the page remains blank, open DevTools (F12) and check Console/Network for JS errors or 404s for assets.';
+          root.appendChild(msg);
+        })();
+      } catch (e) {
+        /* ignore */
+      }
+    </script>
     
   </body>
 </html>

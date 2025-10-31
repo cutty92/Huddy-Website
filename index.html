@@ -7,6 +7,23 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Inline debug/fallback: shows a visible message even if the module bundle fails to load -->
+    <script>
+      try {
+        (function () {
+          var root = document.getElementById('root');
+          if (!root) return;
+          // create a debug message element; it will be removed/replaced by React when app mounts
+          var msg = document.createElement('div');
+          msg.id = 'inline-debug-msg';
+          msg.style.cssText = 'font-family:system-ui,Segoe UI,Roboto,Arial;padding:1rem;background:#fffbeb;border:1px solid #f5c242;margin:1rem';
+          msg.innerText = 'HTML served — inline JS executed. If this message shows but the page remains blank, open DevTools (F12) and check Console/Network for JS errors or 404s for assets.';
+          root.appendChild(msg);
+        })();
+      } catch (e) {
+        /* ignore */
+      }
+    </script>
     <script type="module" src="/src/index.jsx"></script>
   </body>
 </html>
