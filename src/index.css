@@ -1,7 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --bg: #07140a;
+  --panel: #0b1f12;
+  --accent: #17c964;
+  --accent-light: #7ef0b0;
+  --muted: #bfffd6;
+}
+
 html, body, #root {
   height: 100%;
+}
+
+body{
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, var(--bg) 0%, #041008 100%);
+  color: #dfffe9;
+}
+
+.huddy-gradient {
+  background: linear-gradient(90deg, rgba(23,201,100,0.12), rgba(127,240,176,0.06));
+}
+
+.glass {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(127,240,176,0.06);
+  backdrop-filter: blur(4px);
+}
+
+.parallax-img{
+  transform: translateZ(0);
+  will-change: transform;
 }
