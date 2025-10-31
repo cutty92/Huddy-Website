@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Page</title>
+</head>
+<body>
+    <h1>Static Test Page</h1>
+    <p>If you can see this, static file serving works.</p>
+    <div id="debug"></div>
+    <script>
+        const debug = document.getElementById('debug');
+        try {
+            debug.innerHTML += '<p>JavaScript is running</p>';
+            debug.innerHTML += '<p>Window location: ' + window.location.href + '</p>';
+            debug.innerHTML += '<p>Document base URL: ' + document.baseURI + '</p>';
+        } catch (e) {
+            debug.innerHTML += '<p>Error: ' + e.message + '</p>';
+        }
+    </script>
+</body>
+</html>
